@@ -1,0 +1,33 @@
+{
+  "name": "review-scraper",
+  "version": "2.0.0",
+  "description": "A robust Node.js application for scraping reviews from G2, Capterra, and Trustpilot platforms with built-in proxy support and anti-blocking capabilities",
+  "main": "scrapper.js",
+  "scripts": {
+    "start": "node scrapper.js",
+    "scrape": "node scrapper.js",
+    "export": "node export_reviews.js",
+    "scrape-and-export": "node scrapper.js && node export_reviews.js",
+    "dev": "nodemon scrapper.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web-scraping",
+    "reviews",
+    "g2",
+    "capterra",
+    "trustpilot",
+    "scraper",
+    "proxy",
+    "scrapeops"
+  ],
+  "author": "Review Scraper Contributors",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

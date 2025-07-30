@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://www.g2.com/products/example-product/reviews",
+    "start_date": "2023-01-01",
+    "end_date": "2023-12-31"
+  },
+  {
+    "url": "https://www.capterra.com/p/123456/product-name/reviews/",
+    "start_date": "2023-06-01", 
+    "end_date": "2023-12-31"
+  },
+  {
+    "url": "https://www.trustpilot.com/review/example.com",
+    "start_date": "2023-01-01",
+    "end_date": "2023-12-31"
+  }
+]
