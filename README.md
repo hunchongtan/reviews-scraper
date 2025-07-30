@@ -16,32 +16,32 @@ A robust Node.js application for scraping reviews from G2, Capterra, and Trustpi
 
 | Platform | Features | Output Fields |
 |----------|----------|---------------|
-| **G2** |  Star ratings<br> Like/Dislike feedback<br> Problems solved | productName, eviewSite, stars, 	otalReviews, llReviews |
-| **Capterra** |  Star ratings<br> Full review text<br> Review dates | productName, eviewSite, stars, 	otalReviews, llReviews |
-| **Trustpilot** |  Star ratings<br> Review content<br> Review dates | productName, eviewSite, stars, 	otalReviews, llReviews |
+| **G2** | • Star ratings<br>• Like/Dislike feedback<br>• Problems solved | productName, reviewSite, stars, totalReviews, allReviews |
+| **Capterra** | • Star ratings<br>• Full review text<br>• Review dates | productName, reviewSite, stars, totalReviews, allReviews |
+| **Trustpilot** | • Star ratings<br>• Review content<br>• Review dates | productName, reviewSite, stars, totalReviews, allReviews |
 
 ## Installation
 
 1. **Clone the repository**
-   `ash
+   ```bash
    git clone https://github.com/hunchongtan/reviews-scraper.git
    cd reviews-scraper
-   `
+   ```
 
 2. **Install dependencies**
-   `ash
+   ```bash
    npm install
-   `
+   ```
 
 3. **Set up environment variables**
-   `ash
+   ```bash
    cp .env.example .env
-   `
+   ```
    
    Edit .env and add your ScrapeOps API key:
-   `env
+   ```env
    SCRAPEOPS_API_KEY=your_scrapeops_api_key_here
-   `
+   ```
 
    **Getting a ScrapeOps API Key:**
    - Visit [ScrapeOps.io](https://scrapeops.io/)
@@ -55,7 +55,7 @@ A robust Node.js application for scraping reviews from G2, Capterra, and Trustpi
 
 Configure your scraping jobs in input.json:
 
-`json
+```json
 [
   {
     "url": "https://www.g2.com/products/your-product/reviews",
@@ -73,7 +73,7 @@ Configure your scraping jobs in input.json:
     "end_date": "2023-12-31"
   }
 ]
-`
+```
 
 ### URL Formats
 
@@ -85,40 +85,40 @@ Configure your scraping jobs in input.json:
 
 ### Basic Scraping
 
-`ash
+```bash
 # Run the main scraper
 npm start
 # or
 npm run scrape
-`
+```
 
 ### Export to CSV
 
-`ash
+```bash
 # Export JSON results to CSV
 npm run export
-`
+```
 
 ### Complete Workflow
 
-`ash
+```bash
 # Scrape reviews and export to CSV in one command
 npm run scrape-and-export
-`
+```
 
 ### Development Mode
 
-`ash
+```bash
 # Run with nodemon for development
 npm run dev
-`
+```
 
 ## Output Format
 
 ### JSON Output
 All scrapers produce standardized JSON files in the output/ directory:
 
-`json
+```json
 {
   "productName": "Example Product",
   "reviewSite": "G2",
@@ -134,7 +134,7 @@ All scrapers produce standardized JSON files in the output/ directory:
     }
   ]
 }
-`
+```
 
 ### CSV Export
 CSV files are generated in the csv_output/ directory with the same data structure.
@@ -142,17 +142,17 @@ CSV files are generated in the csv_output/ directory with the same data structur
 ## Platform-Specific Features
 
 ### G2 Reviews
-- **Special Fields**: like, dislike, problemsSolved instead of eviewText
+- **Special Fields**: like, dislike, problemsSolved instead of reviewText
 - **Star Format**: Numeric (e.g., "4.6")
 - **Proxy Support**: Full ScrapeOps integration
 
 ### Capterra Reviews
-- **Fields**: Standard eviewText field
+- **Fields**: Standard reviewText field
 - **Star Format**: Numeric (e.g., "4.5")
 - **Proxy Support**: Full ScrapeOps integration
 
 ### Trustpilot Reviews
-- **Fields**: Standard eviewText field
+- **Fields**: Standard reviewText field
 - **Star Format**: Numeric (e.g., "4.0")
 - **Proxy Support**: Full ScrapeOps integration
 
@@ -168,22 +168,22 @@ The scraper includes comprehensive error handling:
 
 ## Project Structure
 
-`
+```
 reviews-scraper/
- scrapers/
-    g2-scraper.js          # G2 platform scraper
-    capterra-scraper.js    # Capterra platform scraper
-    trustpilot-scraper.js  # Trustpilot platform scraper
- utils/
-    common.js              # Shared utilities
- output/                    # JSON output files
- csv_output/               # CSV export files
- scrapper.js               # Main application entry
- export_reviews.js         # CSV export utility
- input.json                # Scraping configuration
- .env.example              # Environment variables template
- package.json              # Project dependencies
-`
+├── scrapers/
+│   ├── g2-scraper.js          # G2 platform scraper
+│   ├── capterra-scraper.js    # Capterra platform scraper
+│   └── trustpilot-scraper.js  # Trustpilot platform scraper
+├── utils/
+│   └── common.js              # Shared utilities
+├── output/                    # JSON output files
+├── csv_output/               # CSV export files
+├── scrapper.js               # Main application entry
+├── export_reviews.js         # CSV export utility
+├── input.json                # Scraping configuration
+├── .env.example              # Environment variables template
+└── package.json              # Project dependencies
+```
 
 ## API Rate Limits & Best Practices
 
@@ -218,9 +218,9 @@ reviews-scraper/
 
 ### Debug Mode
 Enable detailed logging by setting environment variable:
-`ash
+```bash
 DEBUG=true npm start
-`
+```
 
 ## Contributing
 
