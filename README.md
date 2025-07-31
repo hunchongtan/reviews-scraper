@@ -230,10 +230,6 @@ DEBUG=true npm start
 4. Push to the branch (git push origin feature/new-feature)
 5. Create a Pull Request
 
-## License
-
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
-
 ## Disclaimer
 
 This tool is for educational and research purposes. Always respect website terms of service and robots.txt files. Be mindful of rate limits and server resources.
